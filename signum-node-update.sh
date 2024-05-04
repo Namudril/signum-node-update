@@ -19,7 +19,7 @@ if [ $CUR_NODE_VER != $LATEST_NODE_VER ] ; then
 	rm -f "${NEW_NODE_DIR}/signum-node-v${NEW_NODE_VER}.zip"
 	cp -f "${NODE_LINK_DIR}/conf/node.properties" "${NEW_NODE_DIR}/conf/"
 	systemctl stop signum-node.service
-	rm -f $NODE_LINK_DIR
+	rm -rf $NODE_LINK_DIR
 	ln -s $NEW_NODE_DIR $NODE_LINK_DIR
 	systemctl start signum-node.service
 else
